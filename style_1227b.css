@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/* 色 */
+/* 共通  */
+* {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", "Meiryo sans-serif";
+  color: rgb(130, 130, 130);
+}
+
+body header h1 {
+  font-size: 15px;
+  font-weight: 200;
+  padding: 0.5% 0 0 1%;
+}
+body main form .images-library .container {
+  overflow-x: scroll;
+  background-color: rgb(230, 230, 230);
+  padding-top: 1%;
+  padding-left: 1%;
+}
+body main form .images-library .container input[type=radio] {
+  display: none;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+body main form .images-library .container img {
+  width: 150px;
+  margin: 8px;
+}
+body main form .images-library .container input[type=radio]:checked + label img {
+  border: 5px solid rgb(130, 130, 130);
+}
+body main form .container {
+  display: flex;
+  margin-top: 1%;
+}
+body main form .container .example-img {
+  width: 9%;
+  margin: 0.8%;
+  margin-left: 2%;
+}
+body main form .container .example-img .container .example p {
+  font-size: 10px;
+  margin: 2%;
+  text-align: center;
+}
+body main form .container .example-img .container .example img {
+  width: 100%;
+  box-shadow: 4px 4px rgb(170, 170, 170);
+  margin-top: 10px;
+}
+body main form .container .preview-img {
+  width: 50%;
+  padding: 1.3%;
+  margin-top: 3%;
+}
+body main form .container .preview-img p {
+  text-align: center;
+  font-size: 80%;
+}
+body main form .container .preview-img img {
+  width: 100%;
+}
+body main form .container .choice {
+  display: flex;
+  width: 45%;
+}
+body main form .container .choice .container {
+  flex-direction: column;
+  margin-top: 4%;
+  margin-left: 2%;
+  width: 100%;
+}
+body main form .container .choice .container .period {
+  margin-bottom: 4%;
+  display: flex;
+}
+body main form .container .choice .container .period .period-p {
+  width: 6%;
+  font-size: 75%;
+  margin-top: 0.7%;
+}
+body main form .container .choice .container .period .period-choice {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+body main form .container .choice .container .period .period-choice .period-blocks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 1%;
+}
+body main form .container .choice .container .period .period-choice .period-blocks .period-a-year {
+  margin-left: 5%;
+}
+body main form .container .choice .container .period .period-choice .period-blocks p {
+  display: inline;
+  font-size: 70%;
+  vertical-align: middle;
+  margin-top: 3%;
+  margin-right: 2%;
+}
+body main form .container .choice .container .size {
+  margin-bottom: 4%;
+  display: flex;
+  height: 2.3rem;
+}
+body main form .container .choice .container .size .size-p {
+  width: 15%;
+  font-size: 75%;
+}
+body main form .container .choice .position {
+  margin-bottom: 4%;
+  display: flex;
+  height: 2.3rem;
+}
+body main form .container .choice .position .position-p {
+  width: 15%;
+  font-size: 75%;
+}
+body main form .container .choice .weekstart {
+  margin-bottom: 4%;
+  display: flex;
+  height: 2.3rem;
+}
+body main form .container .choice .weekstart .weekstart-p {
+  width: 15%;
+  font-size: 75%;
+}
+body main form .container .choice .holiday-color {
+  margin-bottom: 4%;
+  display: flex;
+}
+body main form .container .choice .holiday-color .holiday-color-p {
+  width: 17%;
+  font-size: 75%;
+}
+body main form .container .choice .holiday-color .holiday-color-choice {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+body main form .container .choice .holiday-color .holiday-color-choice p {
+  display: inline;
+  font-size: 70%;
+  margin-bottom: 100px;
+}
+body main form .container .choice .arrange {
+  margin-bottom: 5%;
+  display: flex;
+  height: 2.3rem;
+}
+body main form .container .choice .arrange .arrange-p {
+  width: 15%;
+  font-size: 75%;
+}
+body main form .container .choice label {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  margin: 8px 1% auto 1%;
+  border: solid rgb(130, 130, 130);
+  box-shadow: rgb(130, 130, 130) 2px 2px;
+  border-radius: 20px;
+  font-size: 65%;
+  color: rgb(130, 130, 130);
+}
+body main form .container .choice input[type=radio] {
+  display: none;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+}
+body main form .container .choice input[type=radio]:checked + label {
+  border: solid rgb(130, 130, 130);
+  background-color: rgb(130, 130, 130);
+  color: #fff;
+  box-shadow: rgb(255, 255, 255) -2px -2px;
+}
+body main .preview-button label {
+  display: inline-block;
+  border: solid rgb(130, 130, 130);
+  border-radius: 3rem;
+  position: fixed;
+  bottom: 70px;
+  right: 50px;
+  padding: 1rem 1.3rem;
+  font-size: 150%;
+  color: rgb(130, 130, 130);
+  box-shadow: rgb(130, 130, 130) 4px 4px;
+  cursor: pointer;
+}
+body main .preview-button input[type=submit] {
+  display: none;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  padding: 0.6rem 1.3rem;
+  margin-right: 18px;
+  border: solid rgb(130, 130, 130);
+  border-radius: 20px;
+}
+body main .preview-button input[type=submit]:hover + label {
+  border: solid rgb(130, 130, 130);
+  background-color: rgb(130, 130, 130);
+  color: #fff;
+  box-shadow: rgb(255, 255, 255) 4px 4px;
+  transition: 0.08s;
+  bottom: 66px;
+  right: 44px;
+}
+
+footer p {
+  font-size: 5%;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style_1227b.css.map */
