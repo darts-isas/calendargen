@@ -31,20 +31,20 @@ $sy = imagesy($img2);
 //　数字画像の位置指定
 if ($arrangement == "横") {
     if ($position == "左上") {
-        $px = 0;
-        $py = 0;
+        $px = 50;
+        $py = 50;
     } else if ($position == "左下") {
-        $px = 0;
-        $py = 1080 - (1080 * $size);
+        $px = 50;
+        $py = 1080 - (1080 * $size) - 50;
     } else if ($position == "中央") {
         $px = (1920 - (1920 * $size)) / 2;
         $py = (1080 - (1080 * $size)) / 2;
     } else if ($position == "右上") {
-        $px = 1920 - (1920 * $size);
-        $py = 0;
+        $px = 1920 - (1920 * $size) - 50;
+        $py = 50;
     } else if ($position == "右下") {
-        $px = 1920 - (1920 * $size);
-        $py = 1080 - (1080 * $size);
+        $px = 1920 - (1920 * $size) - 50;
+        $py = 1080 - (1080 * $size) - 050;
     }
 }
 
@@ -100,7 +100,8 @@ imagedestroy($img);
 <body>
 
 <header>
-    <h1>DARTSカレンダー2023 カスタマイズツール</h1>
+    <p class="title">DARTSカレンダー2023 カスタマイズツール</p>
+    <p class="sub-title">あなたのデスクトップに合わせた壁紙をお作りいただけます</p>
 </header>
 
 <main>
@@ -109,69 +110,93 @@ imagedestroy($img);
         <section class="images-library">
             <div class="container">
 
-                <input type="radio" name="bg-img" value="01" id="01" <?php if($_POST['bg-img'] == "01"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="01" id="01" <?php if ($_POST['bg-img'] == "01") {
+                    echo "checked";
+                } ?>>
                 <label for="01">
-                    <img src="img/bg/01.png" alt="かぐや月面DEMデータを用いて作成した3DCG画像">
+                    <img src="img/bg/for-preview/01.jpg" alt="かぐや月面DEMデータを用いて作成した3DCG画像">
                 </label>
 
-                <input type="radio" name="bg-img" value="02" id="02" <?php if($_POST['bg-img'] == "02"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="02" id="02" <?php if ($_POST['bg-img'] == "02") {
+                    echo "checked";
+                } ?>>
                 <label for="02">
-                    <img src="img/bg/02.png" alt="美星スペースガードセンターで観測されたホームズ彗星">
+                    <img src="img/bg/for-preview/02.jpg" alt="美星スペースガードセンターで観測されたホームズ彗星">
                 </label>
 
-                <input type="radio" name="bg-img" value="03" id="03" <?php if($_POST['bg-img'] == "03"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="03" id="03" <?php if ($_POST['bg-img'] == "03") {
+                    echo "checked";
+                } ?>>
                 <label for="03">
-                    <img src="img/bg/03.png" alt="オーロラ">
+                    <img src="img/bg/for-preview/03.jpg" alt="オーロラ">
                 </label>
 
-                <input type="radio" name="bg-img" value="04" id="04" <?php if($_POST['bg-img'] == "04"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="04" id="04" <?php if ($_POST['bg-img'] == "04") {
+                    echo "checked";
+                } ?>>
                 <label for="04">
-                    <img src="img/bg/04.png" alt="「ひので」のX線望遠鏡で観測した太陽の画像">
+                    <img src="img/bg/for-preview/04.jpg" alt="「ひので」のX線望遠鏡で観測した太陽の画像">
                 </label>
 
-                <input type="radio" name="bg-img" value="05" id="05" <?php if($_POST['bg-img'] == "05"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="05" id="05" <?php if ($_POST['bg-img'] == "05") {
+                    echo "checked";
+                } ?>>
                 <label for="05">
-                    <img src="img/bg/05.png" alt="リュウグウから回収された試料">
+                    <img src="img/bg/for-preview/05.jpg" alt="リュウグウから回収された試料">
                 </label>
 
-<!--                <input type="radio" name="bg-img" value="06" id="06" --><?php //if($_POST['bg-img'] == "06"){echo "checked";} ?><!---->
-<!--                <label for="06">-->
-<!--                    <img src="img/bg/06.png" alt="リュウグウから回収された試料_フラッシュ">-->
-<!--                </label>-->
+                <!--                <input type="radio" name="bg-img" value="06" id="06" -->
+                <?php //if($_POST['bg-img'] == "06"){echo "checked";} ?><!---->
+                <!--                <label for="06">-->
+                <!--                    <img src="img/bg/for-preview/06.jpg" alt="リュウグウから回収された試料_フラッシュ">-->
+                <!--                </label>-->
 
-                <input type="radio" name="bg-img" value="07" id="07" <?php if($_POST['bg-img'] == "07"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="07" id="07" <?php if ($_POST['bg-img'] == "07") {
+                    echo "checked";
+                } ?>>
                 <label for="07">
-                    <img src="img/bg/07.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム">
+                    <img src="img/bg/for-preview/07.jpg" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム">
                 </label>
 
-<!--                <input type="radio" name="bg-img" value="08" id="08" --><?php //if($_POST['bg-img'] == "08"){echo "checked";} ?><!---->
-<!--                <label for="08">-->
-<!--                    <img src="img/bg/08.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム_ヨリ">-->
-<!--                </label>-->
+                <!--                <input type="radio" name="bg-img" value="08" id="08" -->
+                <?php //if($_POST['bg-img'] == "08"){echo "checked";} ?><!---->
+                <!--                <label for="08">-->
+                <!--                    <img src="img/bg/08.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム_ヨリ">-->
+                <!--                </label>-->
 
-                <input type="radio" name="bg-img" value="09" id="09" <?php if($_POST['bg-img'] == "09"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="09" id="09" <?php if ($_POST['bg-img'] == "09") {
+                    echo "checked";
+                } ?>>
                 <label for="09">
-                    <img src="img/bg/09.png" alt="衛星てんま">
+                    <img src="img/bg/for-preview/09.jpg" alt="衛星てんま">
                 </label>
 
-                <input type="radio" name="bg-img" value="10" id="10" <?php if($_POST['bg-img'] == "10"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="10" id="10" <?php if ($_POST['bg-img'] == "10") {
+                    echo "checked";
+                } ?>>
                 <label for="10">
-                    <img src="img/bg/10.png" alt="衛星あけぼの">
+                    <img src="img/bg/for-preview/10.jpg" alt="衛星あけぼの">
                 </label>
 
-                <input type="radio" name="bg-img" value="11" id="11" <?php if($_POST['bg-img'] == "11"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="11" id="11" <?php if ($_POST['bg-img'] == "11") {
+                    echo "checked";
+                } ?>>
                 <label for="11">
-                    <img src="img/bg/11.png" alt="">
+                    <img src="img/bg/for-preview/11.jpg" alt="">
                 </label>
 
-                <input type="radio" name="bg-img" value="12" id="12" <?php if($_POST['bg-img'] == "12"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="12" id="12" <?php if ($_POST['bg-img'] == "12") {
+                    echo "checked";
+                } ?>>
                 <label for="12">
-                    <img src="img/bg/12.png" alt="">
+                    <img src="img/bg/for-preview/12.jpg" alt="">
                 </label>
 
-                <input type="radio" name="bg-img" value="13" id="13" <?php if($_POST['bg-img'] == "13"){echo "checked";} ?>>
+                <input type="radio" name="bg-img" value="13" id="13" <?php if ($_POST['bg-img'] == "13") {
+                    echo "checked";
+                } ?>>
                 <label for="13">
-                    <img src="img/bg/13.png" alt="">
+                    <img src="img/bg/for-preview/13.jpg" alt="">
                 </label>
             </div>
         </section>
@@ -221,48 +246,87 @@ imagedestroy($img);
                         <div class="period-choice">
                             <div class="period-blocks">
                                 <p>２ヶ月間</p>
-                                <input type="radio" id="0102" name="期間" value="0102" <?php if($_POST['期間'] == "0102"){echo "checked";} ?>>
+                                <input type="radio" id="0102" name="期間"
+                                       value="0102" <?php if ($_POST['期間'] == "0102") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="0102">1・2月</label>
 
-                                <input type="radio" id="0304" name="期間" value="0304" <?php if($_POST['期間'] == "0304"){echo "checked";} ?>>
+                                <input type="radio" id="0304" name="期間"
+                                       value="0304" <?php if ($_POST['期間'] == "0304") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="0304">3・4月</label>
 
-                                <input type="radio" id="0506" name="期間" value="0506" <?php if($_POST['期間'] == "0506"){echo "checked";} ?>>
+                                <input type="radio" id="0506" name="期間"
+                                       value="0506" <?php if ($_POST['期間'] == "0506") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="0506">5・6月</label>
 
-                                <input type="radio" id="0708" name="期間" value="0708" <?php if($_POST['期間'] == "0708"){echo "checked";} ?>>
+                                <input type="radio" id="0708" name="期間"
+                                       value="0708" <?php if ($_POST['期間'] == "0708") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="0708">7・8月</label>
 
-                                <input type="radio" id="0910" name="期間" value="0910" <?php if($_POST['期間'] == "0910"){echo "checked";} ?>>
+                                <input type="radio" id="0910" name="期間"
+                                       value="0910" <?php if ($_POST['期間'] == "0910") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="0910">9・10月</label>
 
-                                <input type="radio" id="1112" name="期間" value="1112" <?php if($_POST['期間'] == "1112"){echo "checked";} ?>>
+                                <input type="radio" id="1112" name="期間"
+                                       value="1112" <?php if ($_POST['期間'] == "1112") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="1112">11・12月</label>
                             </div>
                             <div class="period-blocks">
                                 <p>３ヶ月間</p>
-                                <input type="radio" id="010203" name="期間" value="010203" <?php if($_POST['期間'] == "010203"){echo "checked";} ?>>
+                                <input type="radio" id="010203" name="期間"
+                                       value="010203" <?php if ($_POST['期間'] == "010203") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="010203">1・2・3月</label>
 
-                                <input type="radio" id="040506" name="期間" value="040506" <?php if($_POST['期間'] == "040506"){echo "checked";} ?>>
+                                <input type="radio" id="040506" name="期間"
+                                       value="040506" <?php if ($_POST['期間'] == "040506") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="040506">4・5・6月</label>
 
-                                <input type="radio" id="070809" name="期間" value="070809" <?php if($_POST['期間'] == "070809"){echo "checked";} ?>>
+                                <input type="radio" id="070809" name="期間"
+                                       value="070809" <?php if ($_POST['期間'] == "070809") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="070809">7・8・9月</label>
 
-                                <input type="radio" id="101112" name="期間" value="101112" <?php if($_POST['期間'] == "101112"){echo "checked";} ?>>
+                                <input type="radio" id="101112" name="期間"
+                                       value="101112" <?php if ($_POST['期間'] == "101112") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="101112">10・11・12月</label>
                             </div>
                             <div class="period-blocks">
                                 <p>半年間</p>
-                                <input type="radio" id="前半年" name="期間" value="前半年" <?php if($_POST['期間'] == "前半年"){echo "checked";} ?>>
+                                <input type="radio" id="前半年" name="期間"
+                                       value="前半年" <?php if ($_POST['期間'] == "前半年") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="前半年">１〜６月</label>
 
-                                <input type="radio" id="後半年" name="期間" value="後半年" <?php if($_POST['期間'] == "後半年"){echo "checked";} ?>>
+                                <input type="radio" id="後半年" name="期間"
+                                       value="後半年" <?php if ($_POST['期間'] == "後半年") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="後半年">７〜１２月</label>
 
                                 <p class="period-a-year">一年間</p>
-                                <input type="radio" id="一年" name="期間" value="一年" <?php if($_POST['期間'] == "一年"){echo "checked";} ?>>
+                                <input type="radio" id="一年" name="期間"
+                                       value="一年" <?php if ($_POST['期間'] == "一年") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="一年">一年</label>
 
                             </div>
@@ -271,47 +335,73 @@ imagedestroy($img);
 
                     <div class="size">
                         <p class="size-p">大きさ</p>
-                        <input type="radio" id="0.2" name="大きさ" value="0.2" <?php if($_POST['大きさ'] == "0.2"){echo "checked";} ?>>
+                        <input type="radio" id="0.2" name="大きさ" value="0.2" <?php if ($_POST['大きさ'] == "0.2") {
+                            echo "checked";
+                        } ?>>
                         <label for="0.2">極小</label>
 
-                        <input type="radio" id="0.3" name="大きさ" value="0.3" <?php if($_POST['大きさ'] == "0.3"){echo "checked";} ?>>
+                        <input type="radio" id="0.3" name="大きさ" value="0.3" <?php if ($_POST['大きさ'] == "0.3") {
+                            echo "checked";
+                        } ?>>
                         <label for="0.3">小</label>
 
-                        <input type="radio" id="0.4" name="大きさ" value="0.4" <?php if($_POST['大きさ'] == "0.4"){echo "checked";} ?>>
-                        <label for="0.4">中</label>
+                        <input type="radio" id="0.5" name="大きさ" value="0.5" <?php if ($_POST['大きさ'] == "0.5") {
+                            echo "checked";
+                        } ?>>
+                        <label for="0.5">中</label>
 
-                        <input type="radio" id="0.8" name="大きさ" value="0.8" <?php if($_POST['大きさ'] == "0.8"){echo "checked";} ?>>
+                        <input type="radio" id="0.8" name="大きさ" value="0.8" <?php if ($_POST['大きさ'] == "0.8") {
+                            echo "checked";
+                        } ?>>
                         <label for="0.8">大</label>
 
-                        <input type="radio" id="1" name="大きさ" value="1" <?php if($_POST['大きさ'] == "1"){echo "checked";} ?>>
-                        <label for="1">特大</label>
+                        <input type="radio" id="0.9" name="大きさ" value="0.9" <?php if ($_POST['大きさ'] == "0.9") {
+                            echo "checked";
+                        } ?>>
+                        <label for="0.9">特大</label>
                     </div>
 
                     <div class="position">
                         <p class="position-p">位置</p>
-                        <input type="radio" id="左上" name="位置" value="左上" <?php if($_POST['位置'] == "左上"){echo "checked";} ?>>
+                        <input type="radio" id="左上" name="位置" value="左上" <?php if ($_POST['位置'] == "左上") {
+                            echo "checked";
+                        } ?>>
                         <label for="左上">左上</label>
 
-                        <input type="radio" id="左下" name="位置" value="左下" <?php if($_POST['位置'] == "左下"){echo "checked";} ?>>
+                        <input type="radio" id="左下" name="位置" value="左下" <?php if ($_POST['位置'] == "左下") {
+                            echo "checked";
+                        } ?>>
                         <label for="左下">左下</label>
 
-                        <input type="radio" id="中央" name="位置" value="中央" <?php if($_POST['位置'] == "中央"){echo "checked";} ?>>
+                        <input type="radio" id="中央" name="位置" value="中央" <?php if ($_POST['位置'] == "中央") {
+                            echo "checked";
+                        } ?>>
                         <label for="中央">中央</label>
 
-                        <input type="radio" id="右上" name="位置" value="右上" <?php if($_POST['位置'] == "右上"){echo "checked";} ?>>
+                        <input type="radio" id="右上" name="位置" value="右上" <?php if ($_POST['位置'] == "右上") {
+                            echo "checked";
+                        } ?>>
                         <label for="右上">右上</label>
 
-                        <input type="radio" id="右下" name="位置" value="右下" <?php if($_POST['位置'] == "右下"){echo "checked";} ?>>
+                        <input type="radio" id="右下" name="位置" value="右下" <?php if ($_POST['位置'] == "右下") {
+                            echo "checked";
+                        } ?>>
                         <label for="右下">右下</label>
 
                     </div>
 
                     <div class="weekstart">
                         <p class="weekstart-p">週の開始日</p>
-                        <input type="radio" id="月曜始まり" name="週の開始日" value="月曜始まり" <?php if($_POST['週の開始日'] == "月曜始まり"){echo "checked";} ?>>
+                        <input type="radio" id="月曜始まり" name="週の開始日"
+                               value="月曜始まり" <?php if ($_POST['週の開始日'] == "月曜始まり") {
+                            echo "checked";
+                        } ?>>
                         <label for="月曜始まり">月曜始まり</label>
 
-                        <input type="radio" id="日曜始まり" name="週の開始日" value="日曜始まり" <?php if($_POST['週の開始日'] == "日曜始まり"){echo "checked";} ?>>
+                        <input type="radio" id="日曜始まり" name="週の開始日"
+                               value="日曜始まり" <?php if ($_POST['週の開始日'] == "日曜始まり") {
+                            echo "checked";
+                        } ?>>
                         <label for="日曜始まり">日曜始まり</label>
                     </div>
 
@@ -322,26 +412,44 @@ imagedestroy($img);
                         <div class="holiday-color-choice">
                             <div>
                                 <p>土曜</p>
-                                <input type="radio" id="土なし" name="休日表示_土曜" value="なし" <?php if($_POST['休日表示_土曜'] == "なし"){echo "checked";} ?>>
+                                <input type="radio" id="土なし" name="休日表示_土曜"
+                                       value="なし" <?php if ($_POST['休日表示_土曜'] == "なし") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="土なし">なし</label>
 
-                                <input type="radio" id="土青" name="休日表示_土曜" value="青" <?php if($_POST['休日表示_土曜'] == "青"){echo "checked";} ?>>
+                                <input type="radio" id="土青" name="休日表示_土曜"
+                                       value="青" <?php if ($_POST['休日表示_土曜'] == "青") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="土青">青</label>
                             </div>
                             <div>
                                 <p>日曜</p>
-                                <input type="radio" id="日なし" name="休日表示_日曜" value="なし" <?php if($_POST['休日表示_日曜'] == "なし"){echo "checked";} ?>>
+                                <input type="radio" id="日なし" name="休日表示_日曜"
+                                       value="なし" <?php if ($_POST['休日表示_日曜'] == "なし") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="日なし">なし</label>
 
-                                <input type="radio" id="日赤" name="休日表示_日曜" value="赤" <?php if($_POST['休日表示_日曜'] == "赤"){echo "checked";} ?>>
+                                <input type="radio" id="日赤" name="休日表示_日曜"
+                                       value="赤" <?php if ($_POST['休日表示_日曜'] == "赤") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="日赤">赤</label>
                             </div>
                             <div>
                                 <p>祝日</p>
-                                <input type="radio" id="祝なし" name="休日表示_祝日" value="なし" <?php if($_POST['休日表示_祝日'] == "なし"){echo "checked";} ?>>
+                                <input type="radio" id="祝なし" name="休日表示_祝日"
+                                       value="なし" <?php if ($_POST['休日表示_祝日'] == "なし") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="祝なし">なし</label>
 
-                                <input type="radio" id="祝赤" name="休日表示_祝日" value="赤" <?php if($_POST['休日表示_祝日'] == "赤"){echo "checked";} ?>>
+                                <input type="radio" id="祝赤" name="休日表示_祝日"
+                                       value="赤" <?php if ($_POST['休日表示_祝日'] == "赤") {
+                                    echo "checked";
+                                } ?>>
                                 <label for="祝赤">赤</label>
                             </div>
                         </div>
@@ -349,10 +457,14 @@ imagedestroy($img);
 
                     <div class="arrange">
                         <p class="arrange-p">組み</p>
-                        <input type="radio" id="横" name="組み" value="横" <?php if($_POST['組み'] == "横"){echo "checked";} ?>>
+                        <input type="radio" id="横" name="組み" value="横" <?php if ($_POST['組み'] == "横") {
+                            echo "checked";
+                        } ?>>
                         <label for="横">横組み</label>
 
-                        <input type="radio" id="縦" name="組み" value="縦" <?php if($_POST['組み'] == "縦"){echo "checked";} ?>>
+                        <input type="radio" id="縦" name="組み" value="縦" <?php if ($_POST['組み'] == "縦") {
+                            echo "checked";
+                        } ?>>
                         <label for="縦">縦組み</label>
                     </div>
                 </div>
@@ -360,12 +472,17 @@ imagedestroy($img);
         </div>
 
         <!--   プレビューボタン     -->
-        <div class="preview-button">
-            <input type="submit" value="preview" id="preview"><label for="preview">プレビュー</label>
+        <div class="preview-btn">
+            <input type="submit" value="preview" id="preview">
+            <label for="preview">プレビュー</label>
+        </div>
+
+        <!--ダウンロードボタン-->
+        <div class="download-btn">
+            <a type="submit" href="combine.png" download="combine.png" class="download"　id="download">ダウンロード</a>
         </div>
     </form>
 </main>
-
 <footer><p>© ️DARTS JAXA</p></footer>
 
 </body>
