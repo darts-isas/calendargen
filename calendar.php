@@ -75,8 +75,61 @@ if ($arrangement == "縦") {
 //　画像を合成
 @ImageCopyResampled($img, $img2, $px, $py, 0, 0, $sx * $size, $sy * $size, $sx, $sy);
 
+//前々日のディレクトリを削除
+$dir = dirname(__FILE__) . '/calendar/';
+$list = get_file_dir_list($dir);
+
+del_file_dir($list, '-2 minute');
+
+function get_file_dir_list($dir=''){
+    if ( !$dir || !is_dir($dir) ){ die('dirを正しく設定してください。');}
+    $iterator = new RecursiveIteratorIterator(
+        new RecursiveDirectoryIterator(
+            $dir,
+            FilesystemIterator::SKIP_DOTS
+            |FilesystemIterator::KEY_AS_PATHNAME
+            |FilesystemIterator::CURRENT_AS_FILEINFO
+        ), RecursiveIteratorIterator::CHILD_FIRST
+    );
+    $list = array();
+    foreach($iterator as $pathname => $info){
+        $list[] = $pathname;
+    }
+    return $list;
+}
+function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
+    //削除期限
+    date_default_timezone_set('Asia/Tokyo');
+    $expire_timestamp = 0;
+    if (($expire_timestamp = strtotime($expire_date_str)) === false) { die("The expire string : ({$expire_date_str}) is bogus"); }
+
+    foreach ($list as $file_path) {
+        if ( preg_match("/\.gitkeep/", $file_path) ){ continue; } // .gitkeep は削除しない
+        $mod = filemtime( $file_path );
+        if($mod < $expire_timestamp){
+            if (is_dir($file_path)){
+                //echo 'ディレクトリ削除します : '. $file_path.date("Y-m-d H:i:s", $mod)."\n";
+                rmdir($file_path) or die("can not delete directory:({$file_path})");
+            }
+            if (is_file($file_path)){
+                //echo 'ファイル削除します : '. $file_path.date("Y-m-d H:i:s", $mod)."\n";
+                unlink($file_path) or die("can not delete file:({$file_path})");
+            }
+        }
+    }
+}
+
+//日付のディレクトリを作成
+$folder = "calendar/".date('Ymd');
+if(!file_exists($folder)){
+    mkdir($folder);
+}
+
+//ファイル名をランダムに生成
+$file_name = "calendar/".date('Ymd')."/".md5(date('Y-m-dH:i:s')).".png";
+
 // 別名で保存
-imagepng($img, "combine.png");
+imagepng($img, $file_name);
 
 imagedestroy($img);
 
@@ -233,7 +286,7 @@ imagedestroy($img);
             <!--  合成プレビュー表示  -->
             <section class="preview-img">
                 <p>プレビューボタンで選択を反映</p>
-                <img src="combine.png">
+                <img src="<?php echo $file_name;?>">
             </section>
 
             <!--    カレンダー部分の選択肢    -->
@@ -479,7 +532,7 @@ imagedestroy($img);
 
         <!--ダウンロードボタン-->
         <div class="download-btn">
-            <a type="submit" href="combine.png" download="combine.png" class="download"　id="download">ダウンロード</a>
+            <a type="submit" href="<?php echo $file_name;?>" download="<?php echo $file_name;?>" class="download" id="download">ダウンロード</a>
         </div>
     </form>
 </main>
