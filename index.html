@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
-    <title>DARTS 2023カレンダー カスタマイズツール</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"
+            type="text/javascript"></script>
+    <title>DARTS fromJAXA 2023カレンダー カスタマイズツール</title>
 </head>
 
 <body>
@@ -48,9 +49,9 @@
                     <img src="img/bg/for-preview/05.jpg" alt="リュウグウから回収された試料">
                 </label>
 
-                <!--                <in!---->
+                <!--                <input type="radio" name="bg-img" value="06" id="06" !---->
                 <!--                <label for="06">-->
-                <!--                    <img src="img/bg/06.png" alt="リュウグウから回収された試料_フラッシュ">-->
+                <!--                    <img src="img/bg/for-preview/06.jpg" alt="リュウグウから回収された試料_フラッシュ">-->
                 <!--                </label>-->
 
                 <input type="radio" name="bg-img" value="07" id="07">
@@ -58,7 +59,8 @@
                     <img src="img/bg/for-preview/07.jpg" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム">
                 </label>
 
-                <!--                <input type="radio" name="bg-img" value="08" id="08" --><!---->
+                <!--                <input type="radio" name="bg-img" value="08" id="08" -->
+                <!---->
                 <!--                <label for="08">-->
                 <!--                    <img src="img/bg/08.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム_ヨリ">-->
                 <!--                </label>-->
@@ -122,7 +124,7 @@
             <!--  合成プレビュー表示  -->
             <section class="preview-img">
                 <p>プレビューボタンで選択を反映</p>
-                <img src="combine.png">
+                <img src="/img/first.jpg">
             </section>
 
             <!--    カレンダー部分の選択肢    -->
@@ -135,48 +137,61 @@
                         <div class="period-choice">
                             <div class="period-blocks">
                                 <p>２ヶ月間</p>
-                                <input type="radio" id="0102" name="期間" value="0102" checked>
+                                <input type="radio" id="0102" name="期間"
+                                       value="0102" checked>
                                 <label for="0102">1・2月</label>
 
-                                <input type="radio" id="0304" name="期間" value="0304">
+                                <input type="radio" id="0304" name="期間"
+                                       value="0304">
                                 <label for="0304">3・4月</label>
 
-                                <input type="radio" id="0506" name="期間" value="0506">
+                                <input type="radio" id="0506" name="期間"
+                                       value="0506">
                                 <label for="0506">5・6月</label>
 
-                                <input type="radio" id="0708" name="期間" value="0708">
+                                <input type="radio" id="0708" name="期間"
+                                       value="0708">
                                 <label for="0708">7・8月</label>
 
-                                <input type="radio" id="0910" name="期間" value="0910">
+                                <input type="radio" id="0910" name="期間"
+                                       value="0910">
                                 <label for="0910">9・10月</label>
 
-                                <input type="radio" id="1112" name="期間" value="1112">
+                                <input type="radio" id="1112" name="期間"
+                                       value="1112">
                                 <label for="1112">11・12月</label>
                             </div>
                             <div class="period-blocks">
                                 <p>３ヶ月間</p>
-                                <input type="radio" id="010203" name="期間" value="010203">
+                                <input type="radio" id="010203" name="期間"
+                                       value="010203">
                                 <label for="010203">1・2・3月</label>
 
-                                <input type="radio" id="040506" name="期間" value="040506">
+                                <input type="radio" id="040506" name="期間"
+                                       value="040506">
                                 <label for="040506">4・5・6月</label>
 
-                                <input type="radio" id="070809" name="期間" value="070809">
+                                <input type="radio" id="070809" name="期間"
+                                       value="070809">
                                 <label for="070809">7・8・9月</label>
 
-                                <input type="radio" id="101112" name="期間" value="101112">
+                                <input type="radio" id="101112" name="期間"
+                                       value="101112">
                                 <label for="101112">10・11・12月</label>
                             </div>
                             <div class="period-blocks">
                                 <p>半年間</p>
-                                <input type="radio" id="前半年" name="期間" value="前半年">
+                                <input type="radio" id="前半年" name="期間"
+                                       value="前半年">
                                 <label for="前半年">１〜６月</label>
 
-                                <input type="radio" id="後半年" name="期間" value="後半年">
+                                <input type="radio" id="後半年" name="期間"
+                                       value="後半年">
                                 <label for="後半年">７〜１２月</label>
 
                                 <p class="period-a-year">一年間</p>
-                                <input type="radio" id="一年" name="期間" value="一年">
+                                <input type="radio" id="一年" name="期間"
+                                       value="一年">
                                 <label for="一年">一年</label>
 
                             </div>
@@ -194,10 +209,10 @@
                         <input type="radio" id="0.5" name="大きさ" value="0.5">
                         <label for="0.5">中</label>
 
-                        <input type="radio" id="0.8" name="大きさ" value="0.8">
+                        <input type="radio" id="0.8" name="大きさ" value="0.8" checked>
                         <label for="0.8">大</label>
 
-                        <input type="radio" id="0.9" name="大きさ" value="0.9" checked>
+                        <input type="radio" id="0.9" name="大きさ" value="0.9">
                         <label for="0.9">特大</label>
                     </div>
 
@@ -252,10 +267,10 @@
                             </div>
                             <div>
                                 <p>祝日</p>
-                                <input type="radio" id="祝なし" name="休日表示_祝日" value="なし" checked>
+                                <input type="radio" id="祝なし" name="休日表示_祝日" value="なし">
                                 <label for="祝なし">なし</label>
 
-                                <input type="radio" id="祝赤" name="休日表示_祝日" value="赤">
+                                <input type="radio" id="祝赤" name="休日表示_祝日" value="赤" checked>
                                 <label for="祝赤">赤</label>
                             </div>
                         </div>
@@ -281,11 +296,11 @@
 
         <!--ダウンロードボタン-->
         <div class="download-btn">
-            <a type="submit" href="combine.png" download="combine.png" class="download"　id="download">ダウンロード</a>
+            <a type="submit" href="<?php echo $file_name;?>" download="<?php echo $file_name;?>" class="download"
+               id="download">ダウンロード</a>
         </div>
     </form>
 </main>
-
 <footer><p>© ️DARTS JAXA</p></footer>
 
 </body>
