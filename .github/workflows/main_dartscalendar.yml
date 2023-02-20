@@ -16,6 +16,21 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: restruct-mkdir
+        run: mkdir dartscalendar
+      
+      - name: restruct-move
+        run: mv `ls | grep -v dartscalendar` dartscalendar
+      
+      - name: restruct-fakeindex
+        run: touch index.html
+        
+      - name: Modify base path html
+        run: sed -i 's/<base href="\/" \/>/<base href="\/dartscalendar\/" \/>/g' dartscalendar/index.html
+        
+      - name: Modify base path html
+        run: sed -i 's/<base href="\/" \/>/<base href="\/dartscalendar\/" \/>/g' dartscalendar/index.html
+        
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
