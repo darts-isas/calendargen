@@ -536,7 +536,7 @@ imagedestroy($img);
         </div>
     </form>
 </main>
-<footer><p>© ️DARTS JAXA</p></footer>
+<footer><p>© ️DARTS JAXA and TANAKA, Nonoka.</p></footer>
 
 </body>
 </html>
