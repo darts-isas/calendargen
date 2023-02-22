@@ -1,6 +1,11 @@
 <?php
 
+//Deprecatedエラーを非表示
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+
+
 $bg = $_POST['bg-img'];
+$aspect = $_POST['aspect'];
 $period = $_POST['期間'];
 $size = $_POST['大きさ'];
 $position = $_POST['位置'];
@@ -10,6 +15,7 @@ $sun = $_POST['休日表示_日曜'];
 $holiday = $_POST['休日表示_祝日'];
 $arrangement = $_POST['組み'];
 
+//////画像を合成
 //　取り込む画像の名前の参照方法
 $img_name2 = $period . '_' . $weekstart . '_' . $sat . $sun . $holiday . '_' . $arrangement;
 $img_name2 = "./img/" . $img_name2 . ".png";
@@ -28,57 +34,137 @@ $img2 = imagecreatefrompng($img_name2);
 $sx = imagesx($img2);
 $sy = imagesy($img2);
 
-//　数字画像の位置指定
-if ($arrangement == "横") {
-    if ($position == "左上") {
-        $px = 50;
-        $py = 50;
-    } else if ($position == "左下") {
-        $px = 50;
-        $py = 1080 - (1080 * $size) - 50;
-    } else if ($position == "中央") {
-        $px = (1920 - (1920 * $size)) / 2;
-        $py = (1080 - (1080 * $size)) / 2;
-    } else if ($position == "右上") {
-        $px = 1920 - (1920 * $size) - 50;
-        $py = 50;
-    } else if ($position == "右下") {
-        $px = 1920 - (1920 * $size) - 50;
-        $py = 1080 - (1080 * $size) - 050;
+////数字画像の位置指定
+// 16:9（Windows）の場合
+if ($aspect == "1609") {
+//    　　　横組の場合
+    if ($arrangement == "横") {
+        if ($position == "左上") {
+            $px = 40;
+            $py = 40;
+        } else if ($position == "左下") {
+            $px = 40;
+            $py = 1080 - (1080 * $size) - 40;
+        } else if ($position == "中央") {
+            $px = (1920 - (1920 * $size)) / 2;
+            $py = (1080 - (1080 * $size)) / 2;
+        } else if ($position == "右上") {
+            $px = 1920 - (1920 * $size) - 40;
+            $py = 40;
+        } else if ($position == "右下") {
+            $px = 1920 - (1920 * $size) - 40;
+            $py = 1080 - (1080 * $size) - 40;
+        }
+
+    //      縦組の場合
+    } else if ($arrangement == "縦") {
+        if ($position == "左上") {
+            $px = 40;
+            $py = 40;
+        } else if ($position == "左下") {
+            $px = 40;
+            $py = 1080 - (1080 * $size);
+        } else if ($position == "中央") {
+            $px = (1920 - (500 * $size)) / 2;
+            $py = (1080 - (1080 * $size)) / 2;
+        } else if ($position == "右上") {
+            $px = 1920 - (500 * $size) - 40;
+            $py = 40;
+        } else if ($position == "右下") {
+            $px = 1920 - (500 * $size) - 40;
+            $py = 1080 - (1080 * $size) - 40;
+        }
     }
 }
 
-//　縦組の場合
-if ($arrangement == "縦") {
-    if ($position == "左上") {
-        $px = 0;
-        $py = 0;
-    } else if ($position == "左下") {
-        $px = 0;
-        $py = 1080 - (1080 * $size);
-    } else if ($position == "中央") {
-        $px = (1920 - (500 * $size)) / 2;
-        $py = (1080 - (1080 * $size)) / 2;
-    } else if ($position == "右上") {
-        $px = 1920 - (500 * $size);
-        $py = 0;
-    } else if ($position == "右下") {
-        $px = 1920 - (500 * $size);
-        $py = 1080 - (1080 * $size);
+// 16:10（Mac）の場合
+if ($aspect == "1610") {
+    //　　　横組の場合
+    if ($arrangement == "横") {
+        if ($position == "左上") {
+            $px = 140;
+            $py = 40;
+        } else if ($position == "左下") {
+            $px = 140;
+            $py = 1080 - (1080 * $size) - 40;
+        } else if ($position == "中央") {
+            $px = (1920 - (1920 * $size)) / 2;
+            $py = (1080 - (1080 * $size)) / 2;
+        } else if ($position == "右上") {
+            $px = 1920 - (1920 * $size) - 140;
+            $py = 40;
+        } else if ($position == "右下") {
+            $px = 1920 - (1920 * $size) - 140;
+            $py = 1080 - (1080 * $size) - 40;
+        }
+    } //   縦組の場合
+    else if ($arrangement == "縦") {
+        if ($position == "左上") {
+            $px = 140;
+            $py = 40;
+        } else if ($position == "左下") {
+            $px = 140;
+            $py = 1080 - (1080 * $size) - 40;
+        } else if ($position == "中央") {
+            $px = (1920 - (500 * $size)) / 2;
+            $py = (1080 - (1080 * $size)) / 2;
+        } else if ($position == "右上") {
+            $px = 1920 - (500 * $size) - 140;
+            $py = 40;
+        } else if ($position == "右下") {
+            $px = 1920 - (500 * $size) - 140;
+            $py = 1080 - (1080 * $size) - 40;
+        }
     }
 }
-
-//print $position;
-//print $px;
-//print $py;
-
 //　画像を合成
 @ImageCopyResampled($img, $img2, $px, $py, 0, 0, $sx * $size, $sy * $size, $sx, $sy);
 
-//前々日のディレクトリを削除
+//////保存
+//フォルダ「calendar」の中に日付の名前のフォルダを作成
+$folder = "calendar/" . date('Ymd');
+if (!file_exists($folder)) {
+    mkdir($folder);
+}
+
+//// 16:09ならそのまま保存
+//ファイル名をランダムに生成
+$file_name = "calendar/" . date('Ymd') . "/" . md5(date('Y-m-dH:i:s')) . ".png";
+
+//保存
+if($aspect == "1609") {
+    imagepng($img, $file_name);
+    imagedestroy($img);
+}
+
+////16:10ならトリミングして保存
+else if($aspect == "1610"){
+//    ひとまず1920×1080で合成し保存
+    imagepng($img, "combine.png");
+    
+//トリミング後の土台の画像を作る
+    $img1610 = imagecreatetruecolor(1728, 1080);
+    
+//トリミング前の画像を読み込む
+    $baseImage = imagecreatefrompng("combine.png");
+    
+//トリミング後の土台の画像に合わせてトリミング前の画像を縮小しコピーペーストする
+    imagecopyresampled($img1610, $baseImage, -96, 0, 0, 0, 1920, 1080, 1920, 1080);
+    
+// 保存
+    imagepng($img1610, $file_name);
+    imagedestroy($img);
+    }
+    
+//////溜まるキャッシュを削除
+//ディレクトリ名を取得
 $dir = dirname(__FILE__) . '/calendar/';
+
+// 古いファイルを削除
 $list = get_file_dir_list($dir);
 
+
+//2分以上前のファイルを削除
 del_file_dir($list, '-2 minute');
 
 function get_file_dir_list($dir=''){
@@ -119,23 +205,6 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
     }
 }
 
-//日付のディレクトリを作成
-$folder = "calendar/".date('Ymd');
-if(!file_exists($folder)){
-    mkdir($folder);
-}
-
-//ファイル名をランダムに生成
-$file_name = "calendar/".date('Ymd')."/".md5(date('Y-m-dH:i:s')).".png";
-
-// 別名で保存
-imagepng($img, $file_name);
-
-imagedestroy($img);
-
-//　合成された画像を表示
-//header('location:combine.png');
-
 ?>
 <!doctype html>
 <html lang="jpn">
@@ -163,94 +232,116 @@ imagedestroy($img);
     <form action="calendar.php" method="post">
         <section class="images-library">
             <div class="container">
+            <input type="radio" name="bg-img" value="02" id="02" <?php if ($_POST['bg-img'] == "02") {
+                    echo "checked";
+                } ?>>
+                <label for="02">
+                    <img src="img/bg/for-preview/02.png" alt="美星スペースガードセンターで観測されたホームズ彗星">
+                </label>
 
                 <input type="radio" name="bg-img" value="01" id="01" <?php if ($_POST['bg-img'] == "01") {
                     echo "checked";
                 } ?>>
                 <label for="01">
-                    <img src="img/bg/for-preview/01.jpg" alt="かぐや月面DEMデータを用いて作成した3DCG画像">
+                    <img src="img/bg/for-preview/01.png" alt="「かぐや」月面DEMデータを用いて作成した3DCG画像">
                 </label>
 
-                <input type="radio" name="bg-img" value="02" id="02" <?php if ($_POST['bg-img'] == "02") {
+                <input type="radio" name="bg-img" value="18" id="18" <?php if ($_POST['bg-img'] == "18") {
                     echo "checked";
                 } ?>>
-                <label for="02">
-                    <img src="img/bg/for-preview/02.jpg" alt="美星スペースガードセンターで観測されたホームズ彗星">
+                <label for="18">
+                    <img src="img/bg/for-preview/18.jpg" alt="「ひので」日食">
+                </label>
+
+                <input type="radio" name="bg-img" value="14" id="14" <?php if ($_POST['bg-img'] == "14") {
+                    echo "checked";
+                } ?>>
+                <label for="14">
+                    <img src="img/bg/for-preview/14.jpg" alt="「あかり」が観測したマゼラン星雲の遠赤外線画像.png">
+                </label>
+
+                <input type="radio" name="bg-img" value="16" id="16" <?php if ($_POST['bg-img'] == "16") {
+                    echo "checked";
+                } ?>>
+                <label for="16">
+                    <img src="img/bg/for-preview/16.jpg" alt="noname">
                 </label>
 
                 <input type="radio" name="bg-img" value="03" id="03" <?php if ($_POST['bg-img'] == "03") {
                     echo "checked";
                 } ?>>
                 <label for="03">
-                    <img src="img/bg/for-preview/03.jpg" alt="オーロラ">
+                    <img src="img/bg/for-preview/03.png" alt="オーロラ">
                 </label>
 
                 <input type="radio" name="bg-img" value="04" id="04" <?php if ($_POST['bg-img'] == "04") {
                     echo "checked";
                 } ?>>
                 <label for="04">
-                    <img src="img/bg/for-preview/04.jpg" alt="「ひので」のX線望遠鏡で観測した太陽の画像">
+                    <img src="img/bg/for-preview/04.png" alt="「ひので」のX線望遠鏡で観測した太陽の画像">
                 </label>
 
                 <input type="radio" name="bg-img" value="05" id="05" <?php if ($_POST['bg-img'] == "05") {
                     echo "checked";
                 } ?>>
                 <label for="05">
-                    <img src="img/bg/for-preview/05.jpg" alt="リュウグウから回収された試料">
+                    <img src="img/bg/for-preview/05.png" alt="リュウグウから回収された試料">
                 </label>
 
-                <!--                <input type="radio" name="bg-img" value="06" id="06" -->
-                <?php //if($_POST['bg-img'] == "06"){echo "checked";} ?><!---->
-                <!--                <label for="06">-->
-                <!--                    <img src="img/bg/for-preview/06.jpg" alt="リュウグウから回収された試料_フラッシュ">-->
-                <!--                </label>-->
+<!--                <input type="radio" name="bg-img" value="07" id="07" --><?php //if ($_POST['bg-img'] == "07") {
+//                    echo "checked";
+//                } ?><!---->
+<!--                <label for="07">-->
+<!--                    <img src="img/bg/for-preview/07.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム">-->
+<!--                </label>-->
 
-                <input type="radio" name="bg-img" value="07" id="07" <?php if ($_POST['bg-img'] == "07") {
+                <input type="radio" name="bg-img" value="15" id="15" <?php if ($_POST['bg-img'] == "15") {
                     echo "checked";
                 } ?>>
-                <label for="07">
-                    <img src="img/bg/for-preview/07.jpg" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム">
+                <label for="15">
+                    <img src="img/bg/for-preview/15.jpg" alt="「ひので」可視光・磁場望遠鏡(SOT)によって撮影されたCaII H線(396.9nm)の画像">
                 </label>
 
-                <!--                <input type="radio" name="bg-img" value="08" id="08" -->
-                <?php //if($_POST['bg-img'] == "08"){echo "checked";} ?><!---->
-                <!--                <label for="08">-->
-                <!--                    <img src="img/bg/08.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム_ヨリ">-->
-                <!--                </label>-->
+                <input type="radio" name="bg-img" value="17" id="17" <?php if ($_POST['bg-img'] == "17") {
+                    echo "checked";
+                } ?>>
+                <label for="17">
+                    <img src="img/bg/for-preview/17.jpg" alt="地球">
+                </label>
 
                 <input type="radio" name="bg-img" value="09" id="09" <?php if ($_POST['bg-img'] == "09") {
                     echo "checked";
                 } ?>>
                 <label for="09">
-                    <img src="img/bg/for-preview/09.jpg" alt="衛星てんま">
+                    <img src="img/bg/for-preview/09.png" alt="衛星てんま">
                 </label>
 
                 <input type="radio" name="bg-img" value="10" id="10" <?php if ($_POST['bg-img'] == "10") {
                     echo "checked";
                 } ?>>
                 <label for="10">
-                    <img src="img/bg/for-preview/10.jpg" alt="衛星あけぼの">
+                    <img src="img/bg/for-preview/10.png" alt="衛星あけぼの">
                 </label>
 
                 <input type="radio" name="bg-img" value="11" id="11" <?php if ($_POST['bg-img'] == "11") {
                     echo "checked";
                 } ?>>
                 <label for="11">
-                    <img src="img/bg/for-preview/11.jpg" alt="">
+                    <img src="img/bg/for-preview/11.png" alt="">
                 </label>
 
                 <input type="radio" name="bg-img" value="12" id="12" <?php if ($_POST['bg-img'] == "12") {
                     echo "checked";
                 } ?>>
                 <label for="12">
-                    <img src="img/bg/for-preview/12.jpg" alt="">
+                    <img src="img/bg/for-preview/12.png" alt="">
                 </label>
 
                 <input type="radio" name="bg-img" value="13" id="13" <?php if ($_POST['bg-img'] == "13") {
                     echo "checked";
                 } ?>>
                 <label for="13">
-                    <img src="img/bg/for-preview/13.jpg" alt="">
+                    <img src="img/bg/for-preview/13.png" alt="">
                 </label>
             </div>
         </section>
@@ -261,24 +352,34 @@ imagedestroy($img);
                 <div class="container">
                     <div class="example">
                         <p>生成例<br>クリックで拡大表示</p>
-                        <a href="img/ex/example01.png" data-lightbox="example"
-                           data-title="一年/大/左下/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の場合">
-                            <img src="img/ex/example01.jpg" alt="例１">
+                        <a href="/img/ex/example07.png" data-lightbox="example"
+                           data-title="16:9/一年/大/右下/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の使用例">
+                            <img src="/img/ex/example07.png" alt="例１">
                         </a>
 
-                        <a href="img/ex/example02.png" data-lightbox="example"
-                           data-title="4・5・6月/中/月曜始まり/土曜-青/日曜-赤/祝日-なし/縦組み の場合">
-                            <img src="img/ex/example02.jpg" alt="例２">
+                        <a href="/img/ex/example02.png" data-lightbox="example"
+                           data-title="4・5・6月/中/月曜始まり/土曜-青/日曜-赤/祝日-なし/縦組み の使用例">
+                            <img src="/img/ex/example02.png" alt="例２">
                         </a>
 
-                        <a href="img/ex/example03.png" data-lightbox="example"
-                           data-title="半年/特大/右上/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の場合">
-                            <img src="img/ex/example03.jpg" alt="例３">
+                        <a href="/img/ex/example08.png" data-lightbox="example"
+                           data-title="16:9/1~6月/特大/右下/日曜始まり/土曜-なし/日曜-赤/祝日-赤/縦組み の使用例">
+                            <img src="/img/ex/example08.png" alt="例３">
                         </a>
 
-                        <a href="img/ex/example04.png" data-lightbox="example"
-                           data-title="3・4月/中/中/日曜始まり/土曜-青/日曜-赤/祝日-赤/横組み の場合">
-                            <img src="img/ex/example04.jpg" alt="例４">
+                        <a href="/img/ex/example09.png" data-lightbox="example"
+                           data-title="1・2・3月/大/中央/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の使用例">
+                            <img src="/img/ex/example09.png" alt="例４">
+                        </a>
+
+                        <a href="/img/ex/example06.png" data-lightbox="example"
+                           data-title="16:10/3・4月/中/右下/日曜始まり/土曜-青/日曜-赤/祝日-赤/縦組み の使用例">
+                            <img src="/img/ex/example06.png" alt="例５">
+                        </a>
+
+                        <a href="/img/ex/example10.png" data-lightbox="example"
+                           data-title="16:9/11・12月/極小/左上/日曜始まり/土曜-青/日曜-赤/祝日-赤/横組み の使用例">
+                            <img src="/img/ex/example10.png" alt="例６">
                         </a>
                     </div>
                 </div>
@@ -288,6 +389,15 @@ imagedestroy($img);
             <section class="preview-img">
                 <p>プレビューボタンで選択を反映</p>
                 <img src="<?php echo $file_name;?>">
+                <div class="aspect">
+                    <input type="radio" id="1609" name="aspect" value="1609" <?php if ($_POST['aspect'] == "1609") {
+                            echo "checked";} ?>>
+                        <label for="1609">16:9（Windows）</label>
+
+                        <input type="radio" id="1610" name="aspect" value="1610" <?php if ($_POST['aspect'] == "1610") {
+                            echo "checked";} ?>>
+                    <label for="1610">16:10（Mac）</label>
+                </div>
             </section>
 
             <!--    カレンダー部分の選択肢    -->
@@ -399,20 +509,20 @@ imagedestroy($img);
                         } ?>>
                         <label for="0.3">小</label>
 
-                        <input type="radio" id="0.5" name="大きさ" value="0.5" <?php if ($_POST['大きさ'] == "0.5") {
+                        <input type="radio" id="0.65" name="大きさ" value="0.65" <?php if ($_POST['大きさ'] == "0.65") {
                             echo "checked";
                         } ?>>
-                        <label for="0.5">中</label>
+                        <label for="0.65">中</label>
 
                         <input type="radio" id="0.8" name="大きさ" value="0.8" <?php if ($_POST['大きさ'] == "0.8") {
                             echo "checked";
                         } ?>>
                         <label for="0.8">大</label>
 
-                        <input type="radio" id="0.9" name="大きさ" value="0.9" <?php if ($_POST['大きさ'] == "0.9") {
+                        <input type="radio" id="0.95" name="大きさ" value="0.95" <?php if ($_POST['大きさ'] == "0.95") {
                             echo "checked";
                         } ?>>
-                        <label for="0.9">特大</label>
+                        <label for="0.95">特大</label>
                     </div>
 
                     <div class="position">
