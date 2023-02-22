@@ -3,7 +3,6 @@
 //Deprecatedエラーを非表示
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 
-
 $bg = $_POST['bg-img'];
 $aspect = $_POST['aspect'];
 $period = $_POST['期間'];
