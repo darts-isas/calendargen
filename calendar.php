@@ -261,24 +261,24 @@ imagedestroy($img);
                 <div class="container">
                     <div class="example">
                         <p>生成例<br>クリックで拡大表示</p>
-                        <a href="/img/ex/example01.png" data-lightbox="example"
+                        <a href="img/ex/example01.png" data-lightbox="example"
                            data-title="一年/大/左下/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の場合">
-                            <img src="/img/ex/example01.jpg" alt="例１">
+                            <img src="img/ex/example01.jpg" alt="例１">
                         </a>
 
-                        <a href="/img/ex/example02.png" data-lightbox="example"
+                        <a href="img/ex/example02.png" data-lightbox="example"
                            data-title="4・5・6月/中/月曜始まり/土曜-青/日曜-赤/祝日-なし/縦組み の場合">
-                            <img src="/img/ex/example02.jpg" alt="例２">
+                            <img src="img/ex/example02.jpg" alt="例２">
                         </a>
 
-                        <a href="/img/ex/example03.png" data-lightbox="example"
+                        <a href="img/ex/example03.png" data-lightbox="example"
                            data-title="半年/特大/右上/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の場合">
-                            <img src="/img/ex/example03.jpg" alt="例３">
+                            <img src="img/ex/example03.jpg" alt="例３">
                         </a>
 
-                        <a href="/img/ex/example04.png" data-lightbox="example"
+                        <a href="img/ex/example04.png" data-lightbox="example"
                            data-title="3・4月/中/中/日曜始まり/土曜-青/日曜-赤/祝日-赤/横組み の場合">
-                            <img src="/img/ex/example04.jpg" alt="例４">
+                            <img src="img/ex/example04.jpg" alt="例４">
                         </a>
                     </div>
                 </div>
