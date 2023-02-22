@@ -537,7 +537,7 @@ imagedestroy($img);
         </div>
     </form>
 </main>
-<footer><p>このツールは<a href="https://darts.isas.jaxa.jp/">DARTS</a>にアーカイブされた公開データを使って、<a href="https://www.vivivit.com/tanakanonoka">田中乃々華</a>さん（武蔵野美術大学）とDARTSメンバーが協力のもとに制作・公開しました。ソースコードは<a href="https://github.com/darts-isas/calendargen">こちら</a>から公開されています。</p></footer>
+<footer><p>このツールは<a href="https://darts.isas.jaxa.jp/">DARTS</a>にアーカイブされた公開データを使って、<a href="https://www.vivivit.com/tanakanonoka">田中乃々華</a>さん（武蔵野美術大学）とDARTSメンバーが協力のもとに制作・公開しました。ソースコードは<a href="https://github.com/darts-isas/calendargen">こちら</a>から公開されています。画像データの利用は、<a href="https://www.isas.jaxa.jp/researchers/data-policy/">宇宙科学研究所のデータポリシー</a>に従います。</p></footer>
 
 </body>
 </html>
