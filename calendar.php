@@ -21,7 +21,7 @@ $img_name2 = $period . '_' . $weekstart . '_' . $sat . $sun . $holiday . '_' . $
 $img_name2 = "./img/" . $img_name2 . ".png";
 
 $img_name = $bg;
-$img_name = "./img/bg/" . $img_name . ".png";
+$img_name = "/img/bg/" . $img_name . ".png";
 
 
 // 合成する画像を取り込む/背景
