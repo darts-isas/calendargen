@@ -108,7 +108,7 @@ body {
               width: 100%;
             }
             img:hover + a{
-              box-shadow: $gray 4px 4px;
+              box-shadow: $gray 6px 6px;
               transition: 0.2s;
             }
           }
@@ -150,8 +150,8 @@ body {
 
           .container {
             flex-direction: column;
-            margin-top: 4%;
-            margin-left: 2%;
+            margin-top: 2.5%;
+          margin-left: 2%;
             width: 100%;
 
             .period {
