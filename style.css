@@ -172,7 +172,6 @@ body main form .container .choice .weekstart .weekstart-p {
 body main form .container .choice .holiday-color {
   margin-bottom: 4%;
   display: flex;
-  height: 2.3rem;
 }
 body main form .container .choice .holiday-color .holiday-color-p {
   width: 17%;
