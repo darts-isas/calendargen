@@ -351,34 +351,34 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
                 <div class="container">
                     <div class="example">
                         <p>生成例<br>クリックで拡大表示</p>
-                        <a href="/img/ex/example07.png" data-lightbox="example"
+                        <a href="img/ex/example07.png" data-lightbox="example"
                            data-title="16:9/一年/大/右下/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の使用例">
-                            <img src="/img/ex/example07.png" alt="例１">
+                            <img src="img/ex/example07.png" alt="例１">
                         </a>
 
-                        <a href="/img/ex/example02.png" data-lightbox="example"
-                           data-title="4・5・6月/中/月曜始まり/土曜-青/日曜-赤/祝日-なし/縦組み の使用例">
-                            <img src="/img/ex/example02.png" alt="例２">
+                        <a href="img/ex/example02.png" data-lightbox="example"
+                           data-title="16:10/4・5・6月/中/中央/月曜始まり/土曜-青/日曜-赤/祝日-なし/縦組み の使用例">
+                            <img src="img/ex/example02.png" alt="例２">
                         </a>
 
-                        <a href="/img/ex/example08.png" data-lightbox="example"
+                        <a href="img/ex/example08.png" data-lightbox="example"
                            data-title="16:9/1~6月/特大/右下/日曜始まり/土曜-なし/日曜-赤/祝日-赤/縦組み の使用例">
-                            <img src="/img/ex/example08.png" alt="例３">
+                            <img src="img/ex/example08.png" alt="例３">
                         </a>
 
-                        <a href="/img/ex/example09.png" data-lightbox="example"
-                           data-title="1・2・3月/大/中央/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の使用例">
-                            <img src="/img/ex/example09.png" alt="例４">
+                        <a href="img/ex/example09.png" data-lightbox="example"
+                           data-title="16:10/1・2・3月/大/中央/月曜始まり/土曜-なし/日曜-なし/祝日-なし/横組み の使用例">
+                            <img src="img/ex/example09.png" alt="例４">
                         </a>
 
-                        <a href="/img/ex/example06.png" data-lightbox="example"
+                        <a href="img/ex/example06.png" data-lightbox="example"
                            data-title="16:10/3・4月/中/右下/日曜始まり/土曜-青/日曜-赤/祝日-赤/縦組み の使用例">
-                            <img src="/img/ex/example06.png" alt="例５">
+                            <img src="img/ex/example06.png" alt="例５">
                         </a>
 
-                        <a href="/img/ex/example10.png" data-lightbox="example"
+                        <a href="img/ex/example10.png" data-lightbox="example"
                            data-title="16:9/11・12月/極小/左上/日曜始まり/土曜-青/日曜-赤/祝日-赤/横組み の使用例">
-                            <img src="/img/ex/example10.png" alt="例６">
+                            <img src="img/ex/example10.png" alt="例６">
                         </a>
                     </div>
                 </div>
