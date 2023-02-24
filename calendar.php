@@ -222,7 +222,7 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
 <body>
 
 <header>
-<p class="title">カレンダー壁紙作成ツール</p>
+<p class="title">DARTSカレンダー2023 カスタマイズツール</p>
     <p class="sub-title">あなたのデスクトップに合わせた壁紙をお作りいただけます</p>
 </header>
 
