@@ -216,7 +216,7 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"
             type="text/javascript"></script>
-    <title>DARTS fromJAXA 2023カレンダー カスタマイズツール</title>
+    <title>DARTSカレンダー2023 カスタマイズツール</title>
 </head>
 
 <body>
