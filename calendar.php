@@ -411,9 +411,12 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
 
             <!--  合成プレビュー表示/アスペクト比選択肢  -->
             <section class="preview-img">
-                <p>プレビューボタンで選択を反映</p>
-                <img src="<?php echo $file_name;?>">
-
+            <p>プレビューボタンで選択を反映<br>クリックで拡大表示</p>
+                <a href="<?php echo $file_name; ?>" data-lightbox="preview"
+                   data-title="プレビュー">
+                    <img src="<?php echo $file_name; ?>" alt="preview">
+                </a>
+                
                 <div class="aspect">
                     <input type="radio" id="1609" name="aspect" value="1609" <?php if ($_POST['aspect'] == "1609") {
                             echo "checked";} ?>>

@@ -159,9 +159,11 @@
 
             <!--  合成プレビュー表示/アスペクト比選択肢  -->
             <section class="preview-img">
-                <p>プレビューボタンで選択を反映</p>
-                <img src="img/first.jpg">
-                
+                <p>プレビューボタンで選択を反映<br>クリックで拡大表示</p>
+                <a href="img/first.jpg" data-lightbox="preview"
+                   data-title="プレビュー">
+                    <img src="img/first.jpg" alt="preview">
+                </a>
                 <div class="aspect">
                     <input type="radio" id="1609" name="aspect" value="1609" checked>
                     <label for="1609">16:9（Windows）</label>
