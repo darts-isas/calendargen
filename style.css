@@ -23,8 +23,8 @@ body header .sub-title {
 body main form .images-library .container {
   overflow-x: scroll;
   background-color: rgb(230, 230, 230);
-  padding-top: 1%;
   padding-left: 1%;
+  align-items: center;
 }
 body main form .images-library .container input[type=radio] {
   display: none;
