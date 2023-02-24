@@ -128,13 +128,13 @@ if ($aspect == "1609") {
             }//   縦組の場合
             else if ($arrangement == "縦") {
                 if ($position == "左上" || $position == "左下") {
-                    $px = 90;
+                    $px = 100;
                     $py = (1080 - (1080 * $size)) / 2;
                 } else if ($position == "中央") {
                     $px = (1920 - (500 * $size)) / 2;
                     $py = (1080 - (1080 * $size)) / 2;
                 } else if ($position == "右上" || $position == "右下") {
-                    $px = 1350;
+                    $px = 1340;
                     $py = (1080 - (1080 * $size)) / 2;
                 }
             }
