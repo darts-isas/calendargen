@@ -63,7 +63,7 @@ if ($aspect == "1609") {
                 $py = 40;
             } else if ($position == "左下") {
                 $px = 40;
-                $py = 1080 - (1080 * $size);
+                $py = 1080 - (1080 * $size) -40;
             } else if ($position == "中央") {
                 $px = (1920 - (500 * $size)) / 2;
                 $py = (1080 - (1080 * $size)) / 2;
