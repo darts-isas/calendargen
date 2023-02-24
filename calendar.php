@@ -235,14 +235,14 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
                     echo "checked";
                 } ?>>
                 <label for="02">
-                    <img src="img/bg/for-preview/02.png" alt="美星スペースガードセンターで観測されたホームズ彗星">
+                    <img src="img/bg/for-preview/02.jpg" alt="美星スペースガードセンターで観測されたホームズ彗星">
                 </label>
 
                 <input type="radio" name="bg-img" value="01" id="01" <?php if ($_POST['bg-img'] == "01") {
                     echo "checked";
                 } ?>>
                 <label for="01">
-                    <img src="img/bg/for-preview/01.png" alt="「かぐや」月面DEMデータを用いて作成した3DCG画像">
+                    <img src="img/bg/for-preview/01.jpg" alt="「かぐや」月面DEMデータを用いて作成した3DCG画像">
                 </label>
 
                 <input type="radio" name="bg-img" value="18" id="18" <?php if ($_POST['bg-img'] == "18") {
@@ -270,21 +270,21 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
                     echo "checked";
                 } ?>>
                 <label for="03">
-                    <img src="img/bg/for-preview/03.png" alt="オーロラ">
+                    <img src="img/bg/for-preview/03.jpg" alt="オーロラ">
                 </label>
 
                 <input type="radio" name="bg-img" value="04" id="04" <?php if ($_POST['bg-img'] == "04") {
                     echo "checked";
                 } ?>>
                 <label for="04">
-                    <img src="img/bg/for-preview/04.png" alt="「ひので」のX線望遠鏡で観測した太陽の画像">
+                    <img src="img/bg/for-preview/04.jpg" alt="「ひので」のX線望遠鏡で観測した太陽の画像">
                 </label>
 
                 <input type="radio" name="bg-img" value="05" id="05" <?php if ($_POST['bg-img'] == "05") {
                     echo "checked";
                 } ?>>
                 <label for="05">
-                    <img src="img/bg/for-preview/05.png" alt="リュウグウから回収された試料">
+                    <img src="img/bg/for-preview/05.jpg" alt="リュウグウから回収された試料">
                 </label>
 
 <!--                <input type="radio" name="bg-img" value="07" id="07" --><?php //if ($_POST['bg-img'] == "07") {
@@ -312,35 +312,35 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
                     echo "checked";
                 } ?>>
                 <label for="09">
-                    <img src="img/bg/for-preview/09.png" alt="衛星てんま">
+                    <img src="img/bg/for-preview/09.jpg" alt="衛星てんま">
                 </label>
 
                 <input type="radio" name="bg-img" value="10" id="10" <?php if ($_POST['bg-img'] == "10") {
                     echo "checked";
                 } ?>>
                 <label for="10">
-                    <img src="img/bg/for-preview/10.png" alt="衛星あけぼの">
+                    <img src="img/bg/for-preview/10.jpg" alt="衛星あけぼの">
                 </label>
 
                 <input type="radio" name="bg-img" value="11" id="11" <?php if ($_POST['bg-img'] == "11") {
                     echo "checked";
                 } ?>>
                 <label for="11">
-                    <img src="img/bg/for-preview/11.png" alt="">
+                    <img src="img/bg/for-preview/11.jpg" alt="">
                 </label>
 
                 <input type="radio" name="bg-img" value="12" id="12" <?php if ($_POST['bg-img'] == "12") {
                     echo "checked";
                 } ?>>
                 <label for="12">
-                    <img src="img/bg/for-preview/12.png" alt="">
+                    <img src="img/bg/for-preview/12.jpg" alt="">
                 </label>
 
                 <input type="radio" name="bg-img" value="13" id="13" <?php if ($_POST['bg-img'] == "13") {
                     echo "checked";
                 } ?>>
                 <label for="13">
-                    <img src="img/bg/for-preview/13.png" alt="">
+                    <img src="img/bg/for-preview/13.jpg" alt="">
                 </label>
             </div>
         </section>
