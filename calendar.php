@@ -36,6 +36,8 @@ $sy = imagesy($img2);
 //　数字画像の位置指定
 // 16:9（Windows）の場合
 if ($aspect == "1609") {
+    // 特大以外の場合
+    if ($size == "0.2" || $size == "0.3" || $size == "0.65" || $size == "0.8") {
     //    　　　横組の場合
         if ($arrangement == "横") {
             if ($position == "左上") {
@@ -74,6 +76,31 @@ if ($aspect == "1609") {
             }
         }
     }
+}
+// 特大の場合
+else if($size == "0.95"){
+    // 横組の場合
+    if ($arrangement == "横") {
+        if ($position == "左上" || $position == "左下" || $position == "中央" || $position == "右上" || $position == "右下") {
+            $px = (1920 - (1920 * $size)) / 2;
+            $py = (1080 - (1080 * $size)) / 2;
+        }
+    }
+    //   縦組の場合
+    else if ($arrangement == "縦") {
+        if ($position == "左上" || $position == "左下") {
+            $px = 0;
+            $py = (1080 - (1080 * $size)) / 2;
+        } else if ($position == "中央") {
+            $px = (1920 - (500 * $size)) / 2;
+            $py = (1080 - (1080 * $size)) / 2;
+        } else if ($position == "右上" || $position == "右下") {
+            $px = 1240;
+            $py = (1080 - (1080 * $size)) / 2;
+        }
+    }
+}
+
     // 16:10（Mac）の場合
     if ($aspect == "1610") {
     //    特大以外の場合
@@ -118,8 +145,8 @@ if ($aspect == "1609") {
         }
     
     //        特大の場合
+    else if ($size == "0.95") {
     //        横組の場合
-        else if ($size == "0.95") {
             if ($arrangement == "横") {
                 if ($position == "左上" || $position == "左下" || $position == "中央" || $position == "右上" || $position == "右下") {
                     $px = (1920 - (1920 * $size)) / 2;
