@@ -354,12 +354,12 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
                     <img src="img/bg/for-preview/15.jpg" alt="「ひので」可視光・磁場望遠鏡(SOT)によって撮影されたCaII H線(396.9nm)の画像">
                 </label>
 
-                <input type="radio" name="bg-img" value="17" id="17" <?php if ($_POST['bg-img'] == "17") {
+                <!-- <input type="radio" name="bg-img" value="17" id="17" <?php if ($_POST['bg-img'] == "17") {
                     echo "checked";
                 } ?>>
                 <label for="17">
                     <img src="img/bg/for-preview/17.jpg" alt="地球">
-                </label>
+                </label> -->
 
                 <input type="radio" name="bg-img" value="09" id="09" <?php if ($_POST['bg-img'] == "09") {
                     echo "checked";
