@@ -169,9 +169,6 @@ if ($aspect == "1610") {
     }
 }
 
-    print $px;
-    print $py;
-    
 //　画像を合成
 @ImageCopyResampled($img, $img2, $px, $py, 0, 0, $sx * $size, $sy * $size, $sx, $sy);
 
