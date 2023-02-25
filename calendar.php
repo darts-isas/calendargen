@@ -82,7 +82,6 @@ if ($aspect == "1609") {
 else if($size == "0.95"){
     // 横組の場合
     if ($arrangement == "横") {
-        if ($position == "左上" || $position == "左下" || $position == "中央" || $position == "右上" || $position == "右下") {
             $px = (1920 - (1920 * $size)) / 2;
             $py = (1080 - (1080 * $size)) / 2;
         }
