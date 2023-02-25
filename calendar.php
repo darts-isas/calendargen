@@ -85,7 +85,7 @@ else if($size == "0.95"){
             $px = (1920 - (1920 * $size)) / 2;
             $py = (1080 - (1080 * $size)) / 2;
         }
-    }
+
     //   縦組の場合
     else if ($arrangement == "縦") {
         if ($position == "左上" || $position == "左下") {
