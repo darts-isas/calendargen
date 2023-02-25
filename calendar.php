@@ -56,8 +56,10 @@ if ($aspect == "1609") {
                 $px = 1920 - (1920 * $size) - 40;
                 $py = 1080 - (1080 * $size) - 40;
             }
+        }
+    }
     //        縦組の場合
-        } else if ($arrangement == "縦") {
+         else if ($arrangement == "縦") {
             if ($position == "左上") {
                 $px = 40;
                 $py = 40;
@@ -75,8 +77,6 @@ if ($aspect == "1609") {
                 $py = 1080 - (1080 * $size) - 40;
             }
         }
-    }
-}
 
 // 特大の場合
 else if($size == "0.95"){
@@ -99,6 +99,7 @@ else if($size == "0.95"){
             $py = (1080 - (1080 * $size)) / 2;
         }
     }
+}
 }
 
     // 16:10（Mac）の場合
@@ -151,8 +152,9 @@ else if($size == "0.95"){
                 $px = (1920 - (1920 * $size)) / 2;
                 $py = (1080 - (1080 * $size)) / 2;
             }
-            }//   縦組の場合
-            else if ($arrangement == "縦") {
+        }
+            //   縦組の場合
+        else if ($arrangement == "縦") {
                 if ($position == "左上" || $position == "左下") {
                     $px = 100;
                     $py = (1080 - (1080 * $size)) / 2;
