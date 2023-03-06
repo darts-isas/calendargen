@@ -28,12 +28,12 @@
 --->
 
 ## 概要
-JAXA宇宙科学研究所の科学衛星データアーカイブ・公開システム（DARTS）のデータを組み合わせ、デスクトップに合わせた壁紙を作成できるツールです。
+JAXA宇宙科学研究所の科学衛星データアーカイブ・公開システム（[DARTS](https://darts.isas.jaxa.jp/index.html.ja)）のデータを組み合わせ、デスクトップに合わせた壁紙を作成できるツールです。
 
-アプリ公開ページ：https://app.darts.isas.jaxa.jp/dartscalendar/
+ツール公開ページ：https://app.darts.isas.jaxa.jp/dartscalendar/
 
 ## クレジット
-このツールは、DARTSにアーカイブされた公開データを使用し、田中乃々華さん（武蔵野美術大学）とDARTSメンバーが協力のもとに制作・公開しました。
+このツールは、[DARTS](https://darts.isas.jaxa.jp/index.html.ja)にアーカイブされた公開データを使用し、[田中乃々華さん（武蔵野美術大学）](https://www.vivivit.com/tanakanonoka)とDARTSメンバーが協力のもとに制作・公開しました。
 利用は[宇宙科学研究所のデータポリシー](https://www.isas.jaxa.jp/researchers/data-policy/)に従います。
 
 ## 問い合わせ先
