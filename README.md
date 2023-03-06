@@ -1,5 +1,6 @@
 # DARTSカレンダー 2023 カスタマイズツール
 
+<!---
 <a href="https://darts.isas.jaxa.jp/index.html.ja">
 <img alt="DARTS" src="https://darts.isas.jaxa.jp/common/logo_white/logo_darts_large.png" />
 </a>
@@ -16,6 +17,7 @@
 <a href="https://www.jaxa.jp/">
 <img alt="JAXA" src="https://darts.isas.jaxa.jp/common/logo_white/logo_jaxa.png" />
 </a>
+--->
 
 <!---
 ![Contributors](https://img.shields.io/github/contributors/darts-isas/calendargen)
