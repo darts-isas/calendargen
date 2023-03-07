@@ -340,12 +340,12 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
                     <img src="img/bg/for-preview/05.jpg" alt="リュウグウから回収された試料">
                 </label>
 
-<!--                <input type="radio" name="bg-img" value="07" id="07" --><?php //if ($_POST['bg-img'] == "07") {
-//                    echo "checked";
-//                } ?><!---->
-<!--                <label for="07">-->
-<!--                    <img src="img/bg/for-preview/07.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム">-->
-<!--                </label>-->
+               <input type="radio" name="bg-img" value="07" id="07"<?php if ($_POST['bg-img'] == "07") {
+                   echo "checked";
+               } ?>>
+               <label for="07">
+                   <img src="img/bg/for-preview/07.png" alt="「あけぼの」衛星が紫外線で見たオーロラサブストーム">
+               </label>
 
                 <input type="radio" name="bg-img" value="15" id="15" <?php if ($_POST['bg-img'] == "15") {
                     echo "checked";
