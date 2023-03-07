@@ -144,7 +144,7 @@ if ($aspect == "1610") {
                 }
             }
         }
-    
+
     //        特大の場合
     else if ($size == "0.95") {
         if ($arrangement == "横") {
@@ -193,21 +193,21 @@ if($aspect == "1609") {
 else if($aspect == "1610"){
 //    ひとまず1920×1080で合成し保存
     imagepng($img, "combine.png");
-    
+
 //トリミング後の土台の画像を作る
     $img1610 = imagecreatetruecolor(1728, 1080);
-    
+
 //トリミング前の画像を読み込む
     $baseImage = imagecreatefrompng("combine.png");
-    
+
 //トリミング後の土台の画像に合わせてトリミング前の画像を縮小しコピーペーストする
     imagecopyresampled($img1610, $baseImage, -96, 0, 0, 0, 1920, 1080, 1920, 1080);
-    
+
 // 保存
     imagepng($img1610, $file_name);
     imagedestroy($img);
     }
-    
+
 //////溜まるキャッシュを削除
 //ディレクトリ名を取得
 $dir = dirname(__FILE__) . '/calendar/';
@@ -444,7 +444,7 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
                    data-title="プレビュー">
                     <img src="<?php echo $file_name; ?>" alt="preview">
                 </a>
-                
+
                 <div class="aspect">
                     <input type="radio" id="1609" name="aspect" value="1609" <?php if ($_POST['aspect'] == "1609") {
                             echo "checked";} ?>>
