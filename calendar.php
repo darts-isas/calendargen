@@ -269,13 +269,13 @@ function del_file_dir( $list=array(), $expire_date_str='-1 month' ){
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"
             type="text/javascript"></script>
-    <title>DARTSカレンダー2023 カスタマイズツール</title>
+    <title>DARTSカレンダー2024 カスタマイズツール</title>
 </head>
 
 <body>
 
 <header>
-<p class="title">DARTSカレンダー2023 カスタマイズツール</p>
+<p class="title">DARTSカレンダー2024 カスタマイズツール</p>
     <p class="sub-title">あなたのデスクトップに合わせた壁紙をお作りいただけます</p>
 </header>
 
